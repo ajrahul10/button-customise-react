@@ -1,23 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
+import Button from './components/Button'
 
 function App() {
+
+  const howToUse = `Apply different styles:\n 
+  Button style can be "primary", "secondary" or "tertiary"\n 
+  and Button size can be "regular", "medium" or "large"`;
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Customized Button Library</h1>
+      <Button
+        type="submit" 
+        buttonStyle="primary"
+        buttonSize="regular">
+        Primary button
+      </Button><br/>
+      <Button
+        type="submit" 
+        buttonStyle="secondary"
+        buttonSize="large">
+        Secondary button
+      </Button><br/>
+      <Button
+        type="submit" 
+        buttonStyle="tertiary"
+        buttonSize="medium">
+        Tertiary button
+      </Button>
+      <p>{howToUse}</p>
     </div>
   );
 }
