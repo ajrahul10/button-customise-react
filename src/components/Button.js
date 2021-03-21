@@ -1,4 +1,4 @@
-import './Button.css'
+import classes from './Button.module.css'
 
 const STYLE = [
   "primary",
@@ -20,12 +20,14 @@ const Button = ({
   buttonSize
 }) => {
 
+  const appliedClasses = [classes.btn];
   const checkStyle = STYLE.includes(buttonStyle) ? buttonStyle : STYLE[0];
   const checkSize = SIZE.includes(buttonSize) ? buttonSize : SIZE[0];
+  appliedClasses.push(classes[checkStyle], classes[checkSize]);
 
   return (
     <button
-      className={`btn ${checkStyle} ${checkSize}`}
+      className={appliedClasses.join(' ')}
       onClick={onClick}
       type={type}>
       {children}
